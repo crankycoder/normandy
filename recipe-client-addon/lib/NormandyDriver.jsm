@@ -159,6 +159,12 @@ this.NormandyDriver = function(sandboxManager) {
     // Sampling
     ratioSample: sandboxManager.wrapAsync(Sampling.ratioSample),
 
+    preferences: {
+      get: sandboxManager.wrapAsync(Preferences.get, {cloneInto: true}),
+      has: sandboxManager.wrapAsync(Preferences.has, {cloneInto: true}),
+      isSet: sandboxManager.wrapAsync(Preferences.has, {cloneInto: true}),
+    },
+
     // Preference Experiment API
     preferenceExperiments: {
       start: sandboxManager.wrapAsync(PreferenceExperiments.start, {cloneArguments: true}),

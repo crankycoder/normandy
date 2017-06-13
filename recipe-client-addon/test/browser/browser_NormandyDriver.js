@@ -80,3 +80,9 @@ add_task(withSandboxManager(Assert, async function testCreateStorage(sandboxMana
     })();
   `);
 }));
+
+
+add_task(withDriver(Assert, async function testPrefRead(driver) {
+  ok(false, `Got a driver: [${driver}] and preferences: []`);
+}));
+
